@@ -1,0 +1,19 @@
+{
+  "commitish" : "2.8.3",
+  "iOS" : [
+    {
+      "swiftToolchainVersion" : "5.8.1 (swiftlang-5.8.0.124.5 clang-1403.0.22.11.100)",
+      "hash" : "8e1a84ec4b7dbb276f483a05bd273ffc41e8315dcb4b1ab3af46451c00aac3fe",
+      "name" : "Swinject",
+      "container" : "Swinject.xcframework",
+      "identifier" : "ios-arm64"
+    },
+    {
+      "swiftToolchainVersion" : "5.8.1 (swiftlang-5.8.0.124.5 clang-1403.0.22.11.100)",
+      "hash" : "d13dc400afc58ef6290932f47a7cd0b446fbde4e15172e629fa5b7d0514b90b0",
+      "name" : "Swinject",
+      "container" : "Swinject.xcframework",
+      "identifier" : "ios-arm64_x86_64-simulator"
+    }
+  ]
+}

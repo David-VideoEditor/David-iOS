@@ -1,0 +1,19 @@
+{
+  "commitish" : "1.0.1",
+  "iOS" : [
+    {
+      "swiftToolchainVersion" : "5.8.1 (swiftlang-5.8.0.124.5 clang-1403.0.22.11.100)",
+      "hash" : "525b2feb09bd0e59ed77a9468fc35d3b999a245139e1e627f9d1b4fef774ccfa",
+      "name" : "RxCoreData",
+      "container" : "RxCoreData.xcframework",
+      "identifier" : "ios-arm64"
+    },
+    {
+      "swiftToolchainVersion" : "5.8.1 (swiftlang-5.8.0.124.5 clang-1403.0.22.11.100)",
+      "hash" : "cf0094ca84bb60bb6d4f72205d378d6941d7b47b2746b6ab1e2d67e022e31971",
+      "name" : "RxCoreData",
+      "container" : "RxCoreData.xcframework",
+      "identifier" : "ios-arm64_x86_64-simulator"
+    }
+  ]
+}

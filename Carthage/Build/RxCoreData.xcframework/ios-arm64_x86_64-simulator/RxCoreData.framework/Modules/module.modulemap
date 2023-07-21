@@ -1,0 +1,11 @@
+framework module RxCoreData {
+  umbrella header "RxCoreData.h"
+
+  export *
+  module * { export * }
+}
+
+module RxCoreData.Swift {
+  header "RxCoreData-Swift.h"
+  requires objc
+}
