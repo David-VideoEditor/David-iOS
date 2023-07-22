@@ -33,6 +33,7 @@
 		A56291122A6C10DA0003ED1A /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = A56291112A6C10DA0003ED1A /* FirebaseCrashlytics */; };
 		A56291142A6C10DA0003ED1A /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A56291132A6C10DA0003ED1A /* FirebaseFirestoreSwift */; };
 		A56291162A6C10DA0003ED1A /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = A56291152A6C10DA0003ED1A /* FirebaseStorage */; };
+		A56291192A6C111B0003ED1A /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = A56291182A6C111B0003ED1A /* Swinject */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +64,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A562910B2A6C101C0003ED1A /* RxSwift-Dynamic in Frameworks */,
+				A56291192A6C111B0003ED1A /* Swinject in Frameworks */,
 				A56291102A6C10DA0003ED1A /* FirebaseAuth in Frameworks */,
 				A56291162A6C10DA0003ED1A /* FirebaseStorage in Frameworks */,
 				A56291072A6C101C0003ED1A /* RxCocoa-Dynamic in Frameworks */,
@@ -192,6 +194,7 @@
 				A56291112A6C10DA0003ED1A /* FirebaseCrashlytics */,
 				A56291132A6C10DA0003ED1A /* FirebaseFirestoreSwift */,
 				A56291152A6C10DA0003ED1A /* FirebaseStorage */,
+				A56291182A6C111B0003ED1A /* Swinject */,
 			);
 			productName = "David-iOS";
 			productReference = A56708AB2A6C07FC009EF1C8 /* David-iOS.app */;
@@ -224,6 +227,7 @@
 			packageReferences = (
 				A56291032A6C101C0003ED1A /* XCRemoteSwiftPackageReference "RxSwift" */,
 				A562910C2A6C10DA0003ED1A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				A56291172A6C111B0003ED1A /* XCRemoteSwiftPackageReference "Swinject" */,
 			);
 			productRefGroup = A500ACD12A6A4CEA00FAA79B;
 			projectDirPath = "";
@@ -495,6 +499,14 @@
 				minimumVersion = 10.0.0;
 			};
 		};
+		A56291172A6C111B0003ED1A /* XCRemoteSwiftPackageReference "Swinject" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Swinject/Swinject.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -542,6 +554,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = A562910C2A6C10DA0003ED1A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseStorage;
+		};
+		A56291182A6C111B0003ED1A /* Swinject */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A56291172A6C111B0003ED1A /* XCRemoteSwiftPackageReference "Swinject" */;
+			productName = Swinject;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
