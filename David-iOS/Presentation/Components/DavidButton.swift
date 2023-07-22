@@ -15,8 +15,8 @@ final class DavidButton: UIButton {
          symbolName: String? = nil,
          pointSize: CGFloat = 18,
          symbolWeight: UIImage.SymbolWeight = .bold,
-         foregroundColor: UIColor = .titleColor,
-         backgroundColor: UIColor = .backgroundColor,
+         foregroundColor: UIColor = DavidAssets.Colors.titleColor.color,
+         backgroundColor: UIColor = DavidAssets.Colors.backgroundColor.color,
          imagePadding: CGFloat = 10){
         super.init(frame: .zero)
         self.configuration = DavidButton.craeteConfiguration(title: title,
@@ -42,8 +42,8 @@ final class DavidButton: UIButton {
                                 symbolName: String? = nil,
                                 pointSize: CGFloat = 18,
                                 symbolWeight: UIImage.SymbolWeight = .bold,
-                                foregroundColor: UIColor = .titleColor,
-                                backgroundColor: UIColor = .backgroundColor,
+                                foregroundColor: UIColor = DavidAssets.Colors.titleColor.color,
+                                    backgroundColor: UIColor = DavidAssets.Colors.backgroundColor.color,
                                 imagePadding: CGFloat = 10) -> UIButton.Configuration {
         
         var configure = UIButton.Configuration.plain()

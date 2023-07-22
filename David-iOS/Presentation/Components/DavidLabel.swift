@@ -32,8 +32,8 @@ extension DavidLabel {
         let backgroundColor: UIColor?
         let cornerRadius: CGFloat?
         
-        init(titleLabelColor: UIColor? = .titleColor,
-             descriptionLabelColor: UIColor? = .subTitleColor,
+        init(titleLabelColor: UIColor? = DavidAssets.Colors.titleColor.color,
+             descriptionLabelColor: UIColor? = DavidAssets.Colors.subTitleColor.color,
              titleFont: UIFont?,
              descriptionFont: UIFont?,
              backgroundColor: UIColor? = nil,
@@ -47,10 +47,10 @@ extension DavidLabel {
         }
         
         static var defaultConfiguration: Configuration {
-            Configuration(titleLabelColor: <#T##UIColor?#>,
-                          descriptionLabelColor: <#T##UIColor?#>,
-                          titleFont: <#T##UIFont?#>,
-                          descriptionFont: <#T##UIFont?#>,
+            Configuration(titleLabelColor: DavidAssets.Colors.titleColor.color,
+                          descriptionLabelColor: DavidAssets.Colors.titleColor.color,
+                          titleFont: DavidAssets.Fonts.default.font(size: 22, weight: .bold),
+                          descriptionFont: DavidAssets.Fonts.default.font(size: 14, weight: .bold),
                           backgroundColor: nil,
                           cornerRadius: nil)
         }

@@ -41,19 +41,19 @@ extension DavidAssets {
 // MARK: - AssetsConfigure
 extension DavidAssets.Images {
     var image: UIImage {
-        UIImage(named: self.rawValue.capitalized)!
+        UIImage(named: self.rawValue.firstCapitalized)!
     }
 }
 
 extension DavidAssets.Fonts {
-    func font(size:CGFloat, fontWeight: UIFont.Weight = .regular) -> UIFont {
+    func font(size:CGFloat, weight: UIFont.Weight = .regular) -> UIFont {
         if self == .default {
-            return .systemFont(ofSize: size, weight: fontWeight)
+            return .systemFont(ofSize: size, weight: weight)
         }
-        var descriptor = UIFontDescriptor(name: self.rawValue.capitalized,
+        var descriptor = UIFontDescriptor(name: self.rawValue.firstCapitalized,
                                           size: size)
         descriptor = descriptor.addingAttributes(
-            [UIFontDescriptor.AttributeName.traits: [UIFontDescriptor.TraitKey.weight : UIFont.Weight.light]]
+            [UIFontDescriptor.AttributeName.traits: [UIFontDescriptor.TraitKey.weight : weight]]
         )
         return UIFont(descriptor: descriptor, size: size)
     }
@@ -63,7 +63,7 @@ extension DavidAssets.Fonts {
         
         var font = UIFont.systemFont(ofSize: desc.pointSize, weight: weight)
         if self == .default {
-            font = self.font(size: desc.pointSize, fontWeight: weight)
+            font = self.font(size: desc.pointSize, weight: weight)
         }
         let metrics = UIFontMetrics(forTextStyle: style)
         return metrics.scaledFont(for: font)
@@ -72,6 +72,6 @@ extension DavidAssets.Fonts {
 
 extension DavidAssets.Colors {
     var color: UIColor {
-        UIColor(named: self.rawValue.capitalized)!
+        UIColor(named: self.rawValue.firstCapitalized)!
     }
 }

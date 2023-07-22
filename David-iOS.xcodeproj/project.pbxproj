@@ -34,6 +34,7 @@
 		A562913A2A6C134C0003ED1A /* DavidDivider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56291392A6C134C0003ED1A /* DavidDivider.swift */; };
 		A562913C2A6C16940003ED1A /* DavidLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A562913B2A6C16940003ED1A /* DavidLabel.swift */; };
 		A562913F2A6C19EB0003ED1A /* DavidAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = A562913E2A6C19EB0003ED1A /* DavidAssets.swift */; };
+		A56291422A6C21F00003ED1A /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56291412A6C21F00003ED1A /* String+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -68,6 +69,7 @@
 		A56291392A6C134C0003ED1A /* DavidDivider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DavidDivider.swift; sourceTree = "<group>"; };
 		A562913B2A6C16940003ED1A /* DavidLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DavidLabel.swift; sourceTree = "<group>"; };
 		A562913E2A6C19EB0003ED1A /* DavidAssets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DavidAssets.swift; sourceTree = "<group>"; };
+		A56291412A6C21F00003ED1A /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
 		A56708AB2A6C07FC009EF1C8 /* David-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "David-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -115,6 +117,7 @@
 		A52BA64D2A6A562B00D9F90F /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				A56291402A6C21E50003ED1A /* Extensions */,
 				A562913D2A6C19D40003ED1A /* Assets */,
 			);
 			path = Utils;
@@ -203,6 +206,14 @@
 				A562913E2A6C19EB0003ED1A /* DavidAssets.swift */,
 			);
 			path = Assets;
+			sourceTree = "<group>";
+		};
+		A56291402A6C21E50003ED1A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A56291412A6C21F00003ED1A /* String+.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -303,6 +314,7 @@
 				A52BA6592A6A56D300D9F90F /* DavidViewController.swift in Sources */,
 				A562913A2A6C134C0003ED1A /* DavidDivider.swift in Sources */,
 				A52BA65D2A6A56D300D9F90F /* GuideView.swift in Sources */,
+				A56291422A6C21F00003ED1A /* String+.swift in Sources */,
 				A500ACE02A6A4CEB00FAA79B /* SceneDelegate.swift in Sources */,
 				A52BA65C2A6A56D300D9F90F /* GuideViewController.swift in Sources */,
 				A52BA6622A6A571400D9F90F /* MainViewController.swift in Sources */,
@@ -452,6 +464,7 @@
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.video";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -481,6 +494,7 @@
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.video";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;

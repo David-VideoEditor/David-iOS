@@ -20,7 +20,8 @@ final class MainView: UIView, DavidView {
     }
     
     func configure() {
-        self.backgroundColor = .backgroundColor
+        self.backgroundColor = DavidAssets.Colors.backgroundColor.color
+        print("".firstCapitalized)
     }
     
     func addSubviews() {
