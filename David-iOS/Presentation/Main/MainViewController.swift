@@ -6,8 +6,8 @@
 //
 
 import UIKit
-// import RxSwift
-// import RxCocoa
+import RxSwift
+import RxCocoa
 
 import AVKit
 
@@ -15,7 +15,7 @@ class MainViewController: UIViewController, DavidViewController {
     typealias ViewType = MainView
     typealias ViewModelType = MainViewModel
     
-    // let disposeBag = DisposeBag()
+    let disposeBag = DisposeBag()
     
     init(){
         super.init(nibName: nil, bundle: nil)
