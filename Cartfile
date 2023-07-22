@@ -1,3 +1,0 @@
-github "ReactiveX/RxSwift" "6.6.0"
-github "RxSwiftCommunity/RxCoreData" ~> 1.0.0
-github "Swinject/Swinject"
