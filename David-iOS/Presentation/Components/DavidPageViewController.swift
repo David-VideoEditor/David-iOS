@@ -8,11 +8,24 @@
 import UIKit
 
 class DavidPageViewController: UIViewController {
-    private var pageViewController = UIPageViewController(transitionStyle: .scroll,
-                                                          navigationOrientation: .horizontal,
-                                                          options: nil)
-    private var pageControl = UIPageControl()
+    private lazy var pageViewController: UIPageViewController = {
+        let pageViewController = UIPageViewController(transitionStyle: .scroll,
+                                                      navigationOrientation: .horizontal,
+                                                      options: nil)
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(pageClicked))
+        pageViewController.view.addGestureRecognizer(gesture)
+        return pageViewController
+    }()
     
+    private lazy var pageControl: UIPageControl = {
+        let pageControl = UIPageControl()
+        pageControl.currentPageIndicatorTintColor = DavidAssets.Colors.accentColor.color
+        pageControl.pageIndicatorTintColor = DavidAssets.Colors.subTitleColor.color
+        pageControl.addTarget(self, action: #selector(pageControlChanged), for: .valueChanged)
+        return pageControl
+    }()
+    
+    var delegate: DavidPageViewControllerDelegate?
     var index: Int = 0
     
     var itemViews: [UIView] = []
@@ -49,12 +62,11 @@ class DavidPageViewController: UIViewController {
             pageViewController.view.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
             pageViewController.view.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
             pageViewController.view.heightAnchor.constraint(equalTo: pageViewController.view.widthAnchor,
-                                                            multiplier: 0.8),
+                                                            multiplier: 0.6),
             pageControl.topAnchor.constraint(equalTo: pageViewController.view.bottomAnchor,
-                                             constant: 10),
+                                             constant: 5),
             pageControl.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
             pageControl.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
-            pageControl.heightAnchor.constraint(equalToConstant: 40),
             self.view.bottomAnchor.constraint(equalTo: pageControl.bottomAnchor)
         ]
         
@@ -72,8 +84,7 @@ class DavidPageViewController: UIViewController {
             self.index = 0
             self.pageViewController.setViewControllers([firstItemViewController],
                                                        direction: .forward,
-                                                       animated: true,
-                                                       completion: nil)
+                                                       animated: true)
         }
         setPageControl()
     }
@@ -84,28 +95,41 @@ class DavidPageViewController: UIViewController {
         self.view.layoutIfNeeded()
     }
     
+    @objc private func pageControlChanged(_ sender: UIPageControl) {
+        guard let currentItemViewController = itemViewControllers[safe: sender.currentPage] else { return }
+        let direction: UIPageViewController.NavigationDirection = self.index < sender.currentPage ? .forward : .reverse
+        self.index = sender.currentPage
+        self.pageViewController.setViewControllers([currentItemViewController],
+                                                   direction: direction,
+                                                   animated: true)
+        self.pageChanged()
+    }
+    
+    private func pageChanged() {
+        delegate?.pageChanged(pageViewController: pageViewController,
+                              pageControl: pageControl,
+                              index: index)
+    }
+    
+    @objc private func pageClicked() {
+        delegate?.pageClicked(viewController: self,
+                              index: index)
+    }
 }
 
-extension DavidPageViewController: UIPageViewControllerDelegate, UIPageViewControllerDataSource {
+extension DavidPageViewController: UIPageViewControllerDelegate,
+                                   UIPageViewControllerDataSource {
     
     func pageViewController(_ pageViewController: UIPageViewController,
                             viewControllerBefore viewController: UIViewController) -> UIViewController? {
         guard let index = itemViewControllers.firstIndex(of: viewController) else { return nil }
-        let previousIndex = index - 1
-        if previousIndex < 0 {
-            return nil
-        }
-        return itemViewControllers[previousIndex]
+        return itemViewControllers[safe: index - 1]
     }
     
     func pageViewController(_ pageViewController: UIPageViewController,
                             viewControllerAfter viewController: UIViewController) -> UIViewController? {
         guard let index = itemViewControllers.firstIndex(of: viewController) else { return nil }
-        let nextIndex = index + 1
-        if nextIndex >= itemViewControllers.count {
-            return nil
-        }
-        return itemViewControllers[nextIndex]
+        return itemViewControllers[safe: index + 1]
     }
     
     func pageViewController(_ pageViewController: UIPageViewController,
@@ -120,6 +144,7 @@ extension DavidPageViewController: UIPageViewControllerDelegate, UIPageViewContr
                             transitionCompleted completed: Bool) {
         if completed {
             pageControl.currentPage = self.index
+            self.pageChanged()
         }
     }
 }

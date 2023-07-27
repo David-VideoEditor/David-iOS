@@ -9,8 +9,6 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-import AVKit
-
 class MainViewController: UIViewController, DavidViewController {
     typealias ViewType = MainView
     typealias ViewModelType = MainViewModel
@@ -47,6 +45,7 @@ class MainViewController: UIViewController, DavidViewController {
         addChild(pageViewController)
         pageViewController.setItemViews(itemViews)
         self.customView.setPageView(pageViewController.view)
+        self.pageViewController.delegate = self
     }
     
     func bind() {
@@ -60,3 +59,19 @@ class MainViewController: UIViewController, DavidViewController {
     }
 }
 
+extension MainViewController: DavidPageViewControllerDelegate {
+    func pageChanged(pageViewController: UIPageViewController,
+                     pageControl: UIPageControl,
+                     index changedPage: Int) {
+        print("pageChanged", changedPage)
+    }
+    
+    func pageClicked(viewController: UIViewController,
+                     index clickedPage: Int) {
+        print("pageClicked", clickedPage)
+    }
+}
+
+extension MainViewController: UICollectionViewDelegate {
+    
+}
