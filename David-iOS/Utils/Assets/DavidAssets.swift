@@ -14,6 +14,7 @@ final class DavidAssets {
 // MARK: - Images
 extension DavidAssets {
     enum Images: String {
+        case defaultProjectImage
         case pause
         case play
     }

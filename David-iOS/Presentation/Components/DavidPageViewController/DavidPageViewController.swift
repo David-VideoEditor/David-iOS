@@ -12,8 +12,6 @@ class DavidPageViewController: UIViewController {
         let pageViewController = UIPageViewController(transitionStyle: .scroll,
                                                       navigationOrientation: .horizontal,
                                                       options: nil)
-        let gesture = UITapGestureRecognizer(target: self, action: #selector(pageClicked))
-        pageViewController.view.addGestureRecognizer(gesture)
         return pageViewController
     }()
     
@@ -77,9 +75,12 @@ class DavidPageViewController: UIViewController {
         self.itemViews = itemViews
         self.itemViewControllers = itemViews.compactMap { view in
             let viewController = UIViewController()
+            let gesture = UITapGestureRecognizer(target: self, action: #selector(pageClicked))
             viewController.view = view
+            viewController.view.addGestureRecognizer(gesture)
             return viewController
         }
+        
         if let firstItemViewController = itemViewControllers.first {
             self.index = 0
             self.pageViewController.setViewControllers([firstItemViewController],

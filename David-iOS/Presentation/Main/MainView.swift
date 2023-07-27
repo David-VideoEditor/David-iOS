@@ -8,7 +8,8 @@
 import UIKit
 
 final class MainView: UIView, DavidView {
-    var personalProjectTitle: UIView = DavidLabel(title: "내 프로젝트", description: "_개의 프로젝트")
+    var personalProjectTitle: UIView = DavidLabel(title: "내 프로젝트",
+                                                  description: "_개의 프로젝트")
     var projectPageView: UIView?
     
     init() {

@@ -15,11 +15,15 @@ class MainViewController: UIViewController, DavidViewController {
     
     private var pageViewController = DavidPageViewController()
     
-    var itemViews: [UIView] = (0...5).map { idx in
-        let view = UIView()
-        view.backgroundColor = idx % 2 == 0 ? .red : .blue
-        return view
-    }
+    var itemViews: [UIView] = [
+        DavidProjectItemView(),
+        DavidProjectItemView(),
+        DavidProjectItemView(),
+        DavidProjectItemView(),
+        DavidProjectItemView(),
+        DavidProjectItemView()
+        
+    ]
     
     let disposeBag = DisposeBag()
     
@@ -63,15 +67,11 @@ extension MainViewController: DavidPageViewControllerDelegate {
     func pageChanged(pageViewController: UIPageViewController,
                      pageControl: UIPageControl,
                      index changedPage: Int) {
-        print("pageChanged", changedPage)
+        
     }
     
     func pageClicked(viewController: UIViewController,
                      index clickedPage: Int) {
-        print("pageClicked", clickedPage)
+        
     }
-}
-
-extension MainViewController: UICollectionViewDelegate {
-    
 }

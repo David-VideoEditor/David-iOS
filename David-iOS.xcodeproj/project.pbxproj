@@ -22,6 +22,7 @@
 		A52BA6642A6A572100D9F90F /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52BA6632A6A572100D9F90F /* MainViewModel.swift */; };
 		A52E5CC92A7280EF005D57ED /* DavidPageViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52E5CC82A7280EF005D57ED /* DavidPageViewControllerDelegate.swift */; };
 		A52E5CCB2A728505005D57ED /* Array+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52E5CCA2A728505005D57ED /* Array+.swift */; };
+		A52E5CCE2A728CE2005D57ED /* DavidProjectItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52E5CCD2A728CE2005D57ED /* DavidProjectItemView.swift */; };
 		A561C8A52A724F5900C47F8F /* DavidPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A561C8A42A724F5900C47F8F /* DavidPageViewController.swift */; };
 		A562910E2A6C10DA0003ED1A /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A562910D2A6C10DA0003ED1A /* FirebaseAnalyticsSwift */; };
 		A56291102A6C10DA0003ED1A /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = A562910F2A6C10DA0003ED1A /* FirebaseAuth */; };
@@ -38,6 +39,7 @@
 		A562913C2A6C16940003ED1A /* DavidLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A562913B2A6C16940003ED1A /* DavidLabel.swift */; };
 		A562913F2A6C19EB0003ED1A /* DavidAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = A562913E2A6C19EB0003ED1A /* DavidAssets.swift */; };
 		A56291422A6C21F00003ED1A /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56291412A6C21F00003ED1A /* String+.swift */; };
+		A593B7752A72C4AC003F6D74 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A593B7742A72C4AC003F6D74 /* UIView+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -70,6 +72,7 @@
 		A52BA6632A6A572100D9F90F /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		A52E5CC82A7280EF005D57ED /* DavidPageViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DavidPageViewControllerDelegate.swift; sourceTree = "<group>"; };
 		A52E5CCA2A728505005D57ED /* Array+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+.swift"; sourceTree = "<group>"; };
+		A52E5CCD2A728CE2005D57ED /* DavidProjectItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DavidProjectItemView.swift; sourceTree = "<group>"; };
 		A561C8A42A724F5900C47F8F /* DavidPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DavidPageViewController.swift; sourceTree = "<group>"; };
 		A56291372A6C130E0003ED1A /* DavidButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DavidButton.swift; sourceTree = "<group>"; };
 		A56291392A6C134C0003ED1A /* DavidDivider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DavidDivider.swift; sourceTree = "<group>"; };
@@ -77,6 +80,7 @@
 		A562913E2A6C19EB0003ED1A /* DavidAssets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DavidAssets.swift; sourceTree = "<group>"; };
 		A56291412A6C21F00003ED1A /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
 		A56708AB2A6C07FC009EF1C8 /* David-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "David-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A593B7742A72C4AC003F6D74 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,6 +193,15 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		A52E5CCC2A728C18005D57ED /* DavidPageViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A561C8A42A724F5900C47F8F /* DavidPageViewController.swift */,
+				A52E5CC82A7280EF005D57ED /* DavidPageViewControllerDelegate.swift */,
+			);
+			path = DavidPageViewController;
+			sourceTree = "<group>";
+		};
 		A562911F2A6C121C0003ED1A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -199,11 +212,11 @@
 		A56291362A6C13010003ED1A /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				A52E5CCC2A728C18005D57ED /* DavidPageViewController */,
+				A52E5CCD2A728CE2005D57ED /* DavidProjectItemView.swift */,
 				A56291372A6C130E0003ED1A /* DavidButton.swift */,
 				A56291392A6C134C0003ED1A /* DavidDivider.swift */,
 				A562913B2A6C16940003ED1A /* DavidLabel.swift */,
-				A561C8A42A724F5900C47F8F /* DavidPageViewController.swift */,
-				A52E5CC82A7280EF005D57ED /* DavidPageViewControllerDelegate.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -221,6 +234,7 @@
 			children = (
 				A56291412A6C21F00003ED1A /* String+.swift */,
 				A52E5CCA2A728505005D57ED /* Array+.swift */,
+				A593B7742A72C4AC003F6D74 /* UIView+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -322,10 +336,12 @@
 				A52E5CCB2A728505005D57ED /* Array+.swift in Sources */,
 				A52BA65E2A6A56D300D9F90F /* DavidViewModel.swift in Sources */,
 				A52E5CC92A7280EF005D57ED /* DavidPageViewControllerDelegate.swift in Sources */,
+				A593B7752A72C4AC003F6D74 /* UIView+.swift in Sources */,
 				A52BA6592A6A56D300D9F90F /* DavidViewController.swift in Sources */,
 				A562913A2A6C134C0003ED1A /* DavidDivider.swift in Sources */,
 				A52BA65D2A6A56D300D9F90F /* GuideView.swift in Sources */,
 				A56291422A6C21F00003ED1A /* String+.swift in Sources */,
+				A52E5CCE2A728CE2005D57ED /* DavidProjectItemView.swift in Sources */,
 				A561C8A52A724F5900C47F8F /* DavidPageViewController.swift in Sources */,
 				A500ACE02A6A4CEB00FAA79B /* SceneDelegate.swift in Sources */,
 				A52BA65C2A6A56D300D9F90F /* GuideViewController.swift in Sources */,
