@@ -15,6 +15,14 @@ class MainViewController: UIViewController, DavidViewController {
     typealias ViewType = MainView
     typealias ViewModelType = MainViewModel
     
+    private var pageViewController = DavidPageViewController()
+    
+    var itemViews: [UIView] = (0...5).map { idx in
+        let view = UIView()
+        view.backgroundColor = idx % 2 == 0 ? .red : .blue
+        return view
+    }
+    
     let disposeBag = DisposeBag()
     
     init(){
@@ -26,7 +34,7 @@ class MainViewController: UIViewController, DavidViewController {
     }
     
     override func loadView() {
-        self.view = ViewType.init() as UIView
+        self.view =  ViewType.init() as UIView
     }
     
     override func viewDidLoad() {
@@ -36,7 +44,9 @@ class MainViewController: UIViewController, DavidViewController {
     }
     
     func configure() {
-        // print(david)
+        addChild(pageViewController)
+        pageViewController.setItemViews(itemViews)
+        self.customView.setPageView(pageViewController.view)
     }
     
     func bind() {
@@ -49,3 +59,4 @@ class MainViewController: UIViewController, DavidViewController {
         //     .disposed(by: disposeBag)
     }
 }
+
